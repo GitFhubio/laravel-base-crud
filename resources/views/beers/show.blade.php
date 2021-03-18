@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Il chiostro</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
-         <link rel="stylesheet" href="{{asset('css/app.css')}}">
-        <!-- Styles -->
+@extends('beers.layout.app')
+@section('title')
+Product
+@endsection
+@section('content')
         <table class="table">
           <thead class="thead-dark">
             <tr>
@@ -25,20 +18,17 @@
           </thead>
           <tbody>
               <tr>
-                <th scope="row">{{$beer->id}}</th>
-                <td>{{$beer->brand}}</td>
-                <td>{{$beer->materials}}</td>
-                <td>{{$beer->fermentation}}</td>
-                <td>{{$beer->colour}}</td>
-                <td>{{$beer->strength}}</td>
-                <td>{{$beer->price}}</td>
-                <td><img src="{{$beer->cover}}" width="150" /></td>
+                <th class="align-middle" scope="row">{{$beer->id}}</th>
+                <td class="align-middle">{{$beer->brand}}</td>
+                <td class="align-middle">{{$beer->materials}}</td>
+                <td class="align-middle">{{$beer->fermentation}}</td>
+                <td class="align-middle">{{$beer->colour}}</td>
+                <td class="align-middle">{{$beer->strength}}</td>
+                <td class="align-middle">{{$beer->price}}</td>
+                <td class="align-middle"><img src="{{$beer->cover}}" width="150" /></td>
               </tr>
           </tbody>
         </table>
 
     </head>
-    <body>
-
-    </body>
-</html>
+@endsection

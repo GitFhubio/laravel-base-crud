@@ -10002,3 +10002,17 @@ h3 {
     border-color: #dee2e6;
   }
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "MedievalSharp", cursive;
+  font-size: 2vw;
+}
+
+td {
+  font-size: 1.7vw;
+}
