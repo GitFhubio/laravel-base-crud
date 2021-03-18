@@ -36,3 +36,23 @@ class CreateBeersTable extends Migration
         Schema::dropIfExists('beers');
     }
 }
+
+
+// se voglio aggiungere o come nell'esempio sotto togliere campo faccio migrazione col nome che voglio riferita pero alla tabella
+// php artisan make:migration dropallegato  --table=books
+// Schema::table('books', function (Blueprint $table) {
+// $table->dropColumn('allegato');
+// });
+// }
+//
+// /**
+// * Reverse the migrations.
+// *
+// * @return void
+// */
+// public function down()
+// {
+// Schema::table('books', function (Blueprint $table) {
+//   $table->string('allegato',255)->nullable();
+// });
+// }
