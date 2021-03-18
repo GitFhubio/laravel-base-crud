@@ -41,17 +41,17 @@ class BeerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $beer
      * @return \Illuminate\Http\Response
      */
     public function show(Beer $beer)
     {
       // gestisce gia lui se non è possibile trasformare intero in oggetto,allora id non esiste
-      // fa una cosa simile al parseint,l'intero lo trasforma in un oggetto libro ,fa il parse oggettobook
-    // prima c'era id al posto di book come parametro
+      // fa una cosa simile al parseint,l'intero lo trasforma in un oggetto birra ,fa il parse oggettobook
+    // prima c'era id al posto di beer come parametro
     // è piu parlante,altrimenti dovrei fare id->id nella vista
-      // $book = Book::find($book);
-      // poi levo pure $book
+      // $beer = Beer::find($beer);
+      // poi levo pure $beer
       return view('beers.show',compact('beer'));
       // visto che ho book in compact
     }
