@@ -3,6 +3,7 @@
 Product
 @endsection
 @section('content')
+    <h1 class="text-center">Birra selezionata</h1>
         <table class="table">
           <thead class="thead-dark">
             <tr>
