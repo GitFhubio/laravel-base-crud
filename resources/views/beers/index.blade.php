@@ -12,7 +12,7 @@ Homepage
             <tr>
               <th scope="col">#</th>
               <th scope="col">Brand</th>
-              <th scope="col">Materials</th>
+              <th scope="col">Raw Materials</th>
               <th scope="col">Fermentation</th>
               <th scope="col">Colour</th>
               <th scope="col">Strength</th>

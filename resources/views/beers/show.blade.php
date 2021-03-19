@@ -9,7 +9,7 @@ Product
             <div class="card-body">
             <p class="card-text"><strong>#{{$beer->id}}</strong></p>
             <p class="card-text"><strong>Brand: </strong>{{$beer->brand}}</p>
-            <p class="card-text"><strong>Materials: </strong>{{$beer->materials}}</p>
+            <p class="card-text"><strong>Raw Materials: </strong>{{$beer->materials}}</p>
             <p class="card-text"><strong>Fermentation: </strong>{{$beer->fermentation}}</p>
             <p class="card-text"><strong>Colour: </strong> {{$beer->colour}}</p>
             <p class="card-text"><strong>Price: </strong> {{$beer->price}}</p>

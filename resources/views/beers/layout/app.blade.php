@@ -11,6 +11,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
          <link rel="stylesheet" href="{{asset('css/app.css')}}">
           <script src="{{ asset('js/app.js') }}"></script>
+          <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+          <script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'></script>
         <!-- Styles -->
     </head>
     <body>

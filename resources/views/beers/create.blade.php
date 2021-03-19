@@ -4,58 +4,38 @@ Form
 @endsection
 @section('content')
   <div class="container">
-    <form class="was-validated" action="{{route('beers.store')}}" method="post">
+    <form id="validateForm" action="{{route('beers.store')}}" method="post">
       @csrf
       {{-- csrf fa un input con un token,serve per far capire a laravel
       per capire se la chiamata viene dalla sua form --}}
       @method('POST')
       <div class="form-group">
       <label for="brand">Brand</label>
-      <input class="form-control" type="text" name="brand" value="" required>
-      <div class="valid-feedback">
-       Looks good!
-      </div>
+      <input class="form-control" type="text" name="brand" value="">
+            </div>
       <div class="form-group">
-      <label for="materials">Materials</label>
-      <input class="form-control" type="text" name="materials" value="" required>
-      <div class="valid-feedback">
-       Looks good!
-      </div>
+      <label for="materials">Raw Materials</label>
+      <input class="form-control" type="text" name="materials" value="">
           </div>
         <div class="form-group">
       <label for="fermentation">Fermentation</label>
-      <input class="form-control" type="text" name="fermentation" value="" required>
-      <div class="valid-feedback">
-       Looks good!
-      </div>
+      <input class="form-control" type="text" name="fermentation" value="">
           </div>
         <div class="form-group">
       <label for="colour">Colour</label>
-      <input class="form-control" type="text" name="colour" value="" required>
-      <div class="valid-feedback">
-       Looks good!
-      </div>
+      <input class="form-control" type="text" name="colour" value="" >
         </div>
         <div class="form-group">
       <label for="strength">Strength</label>
-      <input class="form-control" type="text" name="strength" value="" required>
-      <div class="valid-feedback">
-       Looks good!
-      </div>
+      <input class="form-control" type="text" name="strength" value="" >
         </div>
         <div class="form-group">
       <label for="price">Price</label>
-      <input class="form-control" type="text" name="price" value="" required>
-      <div class="valid-feedback">
-       Looks good!
-      </div>
+      <input class="form-control" type="text" name="price" value="" >
         </div>
         <div class="form-group">
       <label for="cover">Cover</label>
-      <input class="form-control" type="text" name="cover" value="" required>
-      <div class="valid-feedback">
-       Looks good!
-      </div>
+      <input class="form-control" type="text" name="cover" value="">
         </div>
         <div class="d-flex justify-content-between">
           <input class="btn btn-primary" type="submit" name="" value="Invia">
@@ -66,25 +46,51 @@ Form
     </form>
       </div>
       <script type="text/javascript">
-      // Example starter JavaScript for disabling form submissions if there are invalid fields
-(function () {
-'use strict'
 
-// Fetch all the forms we want to apply custom Bootstrap validation styles to
-var forms = document.querySelectorAll('.needs-validation')
+              $('#validateForm').bootstrapValidator({
+              feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+              },
+              fields: {
+                brand: {
+                  validators: {
+                    stringLength: {
+                      min: 1,
+                      max:50,
+                      message: 'The brand name cannot be longer than 50 characters'
+                    },
+                    notEmpty: {
+                      message: 'Please enter a brand name'
+                    }
+                  }
+                },
+                materials: {
+                  validators: {
+                    stringLength: {
+                      min: 1,
+                      max:250,
+                      message: 'The raw materials cannot be longer than 250 characters'
+                    },
+                    notEmpty: {
+                      message: 'Please specify the raw materials'
+                    }
+                  }
+                },
+                price: {
 
-// Loop over them and prevent submission
-Array.prototype.slice.call(forms)
-  .forEach(function (form) {
-    form.addEventListener('submit', function (event) {
-      if (!form.checkValidity()) {
-        event.preventDefault()
-        event.stopPropagation()
+        validators: {
+          numeric: {
+            message: 'The price must be a number'
+          },
+          notEmpty: {
+            message: 'Please enter a number'
+          }
+        }
       }
 
-      form.classList.add('was-validated')
-    }, false)
-  })
-})()
+                }
+              });
       </script>
 @endsection
