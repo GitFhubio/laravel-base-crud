@@ -3,9 +3,7 @@
 Product
 @endsection
 @section('content')
-    <h1 class="text-center">Birra selezionata</h1>
-
-    <div class="product-container d-flex justify-content-center">
+    <div class="product-container d-flex align-items-center flex-column">
         <div class="card" style="width: 20rem;">
             <img class="card-img-top" src="{{$beer->cover}}" alt="Card image cap">
             <div class="card-body">
@@ -18,6 +16,10 @@ Product
             <a href="#" class="btn btn-primary">Edit</a>
             {{-- l'edit lo faremo lunedi --}}
             </div>
+        </div>
+        <div class="buttons">
+          <a href="{{route('beers.index')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Torna alla lista birre</a>
+          <a href="{{route('beers.create')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Inserisci nuova birra</a>
         </div>
     </div>
 

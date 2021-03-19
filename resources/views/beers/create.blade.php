@@ -3,9 +3,8 @@
 Form
 @endsection
 @section('content')
-  <a href="{{route('beers.index')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Torna alla lista birre</a>
   <div class="container">
-    <form class="needs-validation was-validated" action="{{route('beers.store')}}" method="post">
+    <form class="was-validated" action="{{route('beers.store')}}" method="post">
       @csrf
       {{-- csrf fa un input con un token,serve per far capire a laravel
       per capire se la chiamata viene dalla sua form --}}
@@ -58,7 +57,10 @@ Form
        Looks good!
       </div>
         </div>
-      <input class="btn btn-primary" type="submit" name="" value="Invia">
+        <div class="d-flex justify-content-between">
+          <input class="btn btn-primary" type="submit" name="" value="Invia">
+          <a href="{{route('beers.index')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Torna alla lista birre</a>
+        </div>
       {{-- devi specificarlo a laravel per dirgli di accettare la post --}}
       {{-- lui per creare input hidden ha bisogno di questo @method --}}
     </form>

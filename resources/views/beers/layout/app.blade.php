@@ -14,6 +14,8 @@
         <!-- Styles -->
     </head>
     <body>
+  <div class="wrapper">
+    <div class="error-section">
       @if ($errors->any())
 <div class="alert alert-danger">
 <ul>
@@ -23,8 +25,10 @@
 </ul>
 </div>
 @endif
+    </div>
       <main>
     @yield('content')
    </main>
+   </div>
     </body>
 </html>
