@@ -3,6 +3,7 @@
 Form
 @endsection
 @section('content')
+  <a href="{{route('beers.index')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Torna alla lista birre</a>
   <div class="container">
     <form class="needs-validation was-validated" action="{{route('beers.store')}}" method="post">
       @csrf
@@ -17,11 +18,17 @@ Form
       </div>
       <div class="form-group">
       <label for="materials">Materials</label>
-      <input class="form-control" type="text" name="materials" value="">
+      <input class="form-control" type="text" name="materials" value="" required>
+      <div class="valid-feedback">
+       Looks good!
+      </div>
           </div>
         <div class="form-group">
       <label for="fermentation">Fermentation</label>
-      <input class="form-control" type="text" name="fermentation" value="">
+      <input class="form-control" type="text" name="fermentation" value="" required>
+      <div class="valid-feedback">
+       Looks good!
+      </div>
           </div>
         <div class="form-group">
       <label for="colour">Colour</label>
@@ -32,7 +39,10 @@ Form
         </div>
         <div class="form-group">
       <label for="strength">Strength</label>
-      <input class="form-control" type="text" name="strength" value="" >
+      <input class="form-control" type="text" name="strength" value="" required>
+      <div class="valid-feedback">
+       Looks good!
+      </div>
         </div>
         <div class="form-group">
       <label for="price">Price</label>
@@ -43,7 +53,10 @@ Form
         </div>
         <div class="form-group">
       <label for="cover">Cover</label>
-      <input class="form-control" type="text" name="cover" value="">
+      <input class="form-control" type="text" name="cover" value="" required>
+      <div class="valid-feedback">
+       Looks good!
+      </div>
         </div>
       <input class="btn btn-primary" type="submit" name="" value="Invia">
       {{-- devi specificarlo a laravel per dirgli di accettare la post --}}
