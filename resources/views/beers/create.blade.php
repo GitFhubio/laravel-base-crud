@@ -3,6 +3,7 @@
 Form
 @endsection
 @section('content')
+  <div class="container">
     <form action="{{route('beers.store')}}" method="post">
       @csrf
       {{-- csrf fa un input con un token,serve per far capire a laravel
@@ -40,4 +41,5 @@ Form
       {{-- devi specificarlo a laravel per dirgli di accettare la post --}}
       {{-- lui per creare input hidden ha bisogno di questo @method --}}
     </form>
+      </div>
 @endsection

@@ -3,7 +3,10 @@
 Homepage
 @endsection
 @section('content')
+  <div class="header d-flex justify-content-between align-items-center">
     <h1 class="text-center">Lista birre</h1>
+    <a style="height:80%;" href="{{route('beers.create')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Create a new beer</a>
+  </div>
         <table class="table">
           <thead class="thead-dark">
             <tr>

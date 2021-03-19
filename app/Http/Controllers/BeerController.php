@@ -37,11 +37,11 @@ class BeerController extends Controller
     {
       // dd($request);
       // // la validazione si fa direttamente sulla Request
-      // $request->validate([
-      //   'title'=>'required|max:255',
-      //   'body'=>'required',
-      //   'price'=>'digits_between:3,6'
-      // ]);
+      $request->validate([
+        'brand'=>'required|max:50',
+        'colour'=>'required',
+        'price'=>'digits_between:3,6'
+      ]);
       // questo se faccio submit fa parte di un oggetto illuminate
       // che descrive la chiamata http,quindi posso accedere al metodo,il chiamante etc,trovo request in request parameters
 

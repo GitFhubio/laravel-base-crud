@@ -10009,7 +10009,7 @@ h3 {
 }
 
 body {
-  font-family: "MedievalSharp", cursive;
+  font-family: "Ubuntu", sans-serif;
   font-size: 2vw;
 }
 
@@ -10020,4 +10020,8 @@ td {
 h1 {
   font-size: 2.9vw;
   margin-top: 0.5rem;
+}
+
+.card-body p {
+  font-size: 1vw;
 }

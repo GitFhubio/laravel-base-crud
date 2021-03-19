@@ -4,7 +4,24 @@ Product
 @endsection
 @section('content')
     <h1 class="text-center">Birra selezionata</h1>
-        <table class="table">
+
+    <div class="product-container d-flex justify-content-center">
+        <div class="card" style="width: 20rem;">
+            <img class="card-img-top" src="{{$beer->cover}}" alt="Card image cap">
+            <div class="card-body">
+            <p class="card-text"><strong>#{{$beer->id}}</strong></p>
+            <p class="card-text"><strong>Brand: </strong>{{$beer->brand}}</p>
+            <p class="card-text"><strong>Materials: </strong>{{$beer->materials}}</p>
+            <p class="card-text"><strong>Fermentation: </strong>{{$beer->fermentation}}</p>
+            <p class="card-text"><strong>Colour: </strong> {{$beer->colour}}</p>
+            <p class="card-text"><strong>Price: </strong> {{$beer->price}}</p>
+            <a href="#" class="btn btn-primary">Edit</a>
+            {{-- l'edit lo faremo lunedi --}}
+            </div>
+        </div>
+    </div>
+
+        {{-- <table class="table">
           <thead class="thead-dark">
             <tr>
               <th scope="col">#</th>
@@ -29,7 +46,7 @@ Product
                 <td class="align-middle"><img src="{{$beer->cover}}" width="150" /></td>
               </tr>
           </tbody>
-        </table>
+        </table> --}}
 
     </head>
 @endsection
