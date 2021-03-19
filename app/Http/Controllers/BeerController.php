@@ -40,7 +40,7 @@ class BeerController extends Controller
       $request->validate([
         'brand'=>'required|max:50',
         'colour'=>'required',
-        'price'=>'digits_between:3,6'
+        'price'=>'required|digits_between:3,6'
       ]);
       // questo se faccio submit fa parte di un oggetto illuminate
       // che descrive la chiamata http,quindi posso accedere al metodo,il chiamante etc,trovo request in request parameters

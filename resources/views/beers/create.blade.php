@@ -4,14 +4,16 @@ Form
 @endsection
 @section('content')
   <div class="container">
-    <form action="{{route('beers.store')}}" method="post">
+    <form class="needs-validation was-validated" action="{{route('beers.store')}}" method="post">
       @csrf
       {{-- csrf fa un input con un token,serve per far capire a laravel
       per capire se la chiamata viene dalla sua form --}}
       @method('POST')
       <div class="form-group">
       <label for="brand">Brand</label>
-      <input class="form-control" type="text" name="brand" value="">
+      <input class="form-control" type="text" name="brand" value="" required>
+      <div class="valid-feedback">
+       Looks good!
       </div>
       <div class="form-group">
       <label for="materials">Materials</label>
@@ -23,15 +25,21 @@ Form
           </div>
         <div class="form-group">
       <label for="colour">Colour</label>
-      <input class="form-control" type="text" name="colour" value="">
+      <input class="form-control" type="text" name="colour" value="" required>
+      <div class="valid-feedback">
+       Looks good!
+      </div>
         </div>
         <div class="form-group">
       <label for="strength">Strength</label>
-      <input class="form-control" type="text" name="strength" value="">
+      <input class="form-control" type="text" name="strength" value="" >
         </div>
         <div class="form-group">
       <label for="price">Price</label>
-      <input class="form-control" type="text" name="price" value="">
+      <input class="form-control" type="text" name="price" value="" required>
+      <div class="valid-feedback">
+       Looks good!
+      </div>
         </div>
         <div class="form-group">
       <label for="cover">Cover</label>
@@ -42,4 +50,26 @@ Form
       {{-- lui per creare input hidden ha bisogno di questo @method --}}
     </form>
       </div>
+      <script type="text/javascript">
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+'use strict'
+
+// Fetch all the forms we want to apply custom Bootstrap validation styles to
+var forms = document.querySelectorAll('.needs-validation')
+
+// Loop over them and prevent submission
+Array.prototype.slice.call(forms)
+  .forEach(function (form) {
+    form.addEventListener('submit', function (event) {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+      </script>
 @endsection
