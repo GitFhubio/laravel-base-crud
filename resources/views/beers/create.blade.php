@@ -19,16 +19,26 @@ Form
           </div>
         <div class="form-group">
       <label for="fermentation">Fermentation</label>
-      <input class="form-control" type="text" name="fermentation" value="">
+      <select class="form-control" type="text" name="fermentation" value="">
+        <option value="low">low</option>
+        <option value="high">high</option>
+        <option value="natural">natural</option>
+      </select>
           </div>
         <div class="form-group">
       <label for="colour">Colour</label>
-      <input class="form-control" type="text" name="colour" value="" >
-        </div>
+<select class="form-control" type="text" name="colour" value="">
+      <option value="pale">pale</option>
+      <option value="red">red</option>
+      <option value="dark">dark</option>
+    </select>
         <div class="form-group">
       <label for="strength">Strength</label>
-      <input class="form-control" type="text" name="strength" value="" >
-        </div>
+      <select class="form-control" type="text" name="strength" value="">
+            <option value="light">light</option>
+            <option value="normal">normal</option>
+            <option value="strong">strong</option>
+          </select>
         <div class="form-group">
       <label for="price">Price</label>
       <input class="form-control" type="text" name="price" value="" >
@@ -88,8 +98,19 @@ Form
             message: 'Please enter a number'
           }
         }
-      }
-
+      },
+      cover: {
+        validators: {
+          stringLength: {
+            min: 1,
+            max:2048,
+            message: 'The image url cannpt be longer than 2048 characters'
+          },
+          notEmpty: {
+            message: 'Please enter an image URL'
+          }
+        }
+      },
                 }
               });
       </script>
