@@ -24,7 +24,7 @@ class BeerController extends Controller
      */
     public function create()
     {
-        //
+      return view('beers.create');
     }
 
     /**
@@ -35,7 +35,32 @@ class BeerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      // dd($request);
+      // // la validazione si fa direttamente sulla Request
+      // $request->validate([
+      //   'title'=>'required|max:255',
+      //   'body'=>'required',
+      //   'price'=>'digits_between:3,6'
+      // ]);
+      // questo se faccio submit fa parte di un oggetto illuminate
+      // che descrive la chiamata http,quindi posso accedere al metodo,il chiamante etc,trovo request in request parameters
+
+    // versione lunga
+    // per prenderci tutti i parametri dalla form
+    $data= $request->all();
+    // dobbiamo creare nuovo oggetto (model)
+    // $beer=new Beer();
+    // $beer->brand = $data['brand'];
+    // $beer->colour=$data['colour'];
+    // $beer->save();
+    // salva nel database
+    // c'è un metodo corto
+    $beer=new Beer();
+    $beer->fill($data);
+    $beer->save();
+    // è meglio perche il controller non deve pensare alle proprietà
+    $beerStored=Beer::orderBy('id','desc')->first();
+    return redirect()->route('beers.show',$beerStored);
     }
 
     /**

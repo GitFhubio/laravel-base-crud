@@ -20,14 +20,14 @@ Homepage
           <tbody>
             @foreach ($beers as $beer)
               <tr>
-                <th  class="align-middle" scope="row">{{$beer->id}}</th>
-                <td  class="align-middle">{{$beer->brand}}</td>
-                <td  class="align-middle">{{$beer->materials}}</td>
-                <td  class="align-middle">{{$beer->fermentation}}</td>
-                <td  class="align-middle">{{$beer->colour}}</td>
-                <td  class="align-middle">{{$beer->strength}}</td>
-                <td  class="align-middle">{{$beer->price}}</td>
-                <td><img src="{{$beer->cover}}" width="150" /></td>
+                <th  class="align-middle" scope="row"><a href="{{route('beers.show',['beer'=>$beer->id])}}">{{$beer->id}}</a></th>
+                <td  class="align-middle"><a href="{{route('beers.show',['beer'=>$beer->id])}}">{{$beer->brand}}</a></td>
+                <td  class="align-middle"><a href="{{route('beers.show',['beer'=>$beer->id])}}">{{$beer->materials}}</a></td>
+                <td  class="align-middle"><a href="{{route('beers.show',['beer'=>$beer->id])}}">{{$beer->fermentation}}</a></td>
+                <td  class="align-middle"><a href="{{route('beers.show',['beer'=>$beer->id])}}">{{$beer->colour}}</a></td>
+                <td  class="align-middle"><a href="{{route('beers.show',['beer'=>$beer->id])}}">{{$beer->strength}}</a></td>
+                <td  class="align-middle"><a href="{{route('beers.show',['beer'=>$beer->id])}}">{{$beer->price}}</a></td>
+                <td><a href="{{route('beers.show',['beer'=>$beer->id])}}"><img src="{{$beer->cover}}" width="150" /></a></td>
               </tr>
             @endforeach
 @endsection
