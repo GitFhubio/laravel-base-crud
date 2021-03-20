@@ -1,7 +1,8 @@
 @extends('beers.layout.app')
-@section('title')
+@section('title','Form')
+{{-- @section('title')
 Form
-@endsection
+@endsection --}}
 @section('content')
   <div class="container">
     <form id="validateForm" action="{{route('beers.store')}}" method="post">
