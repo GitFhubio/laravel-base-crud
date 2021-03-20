@@ -22,7 +22,6 @@ Product
           <a href="{{route('beers.create')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Inserisci nuova birra</a>
         </div>
     </div>
-
         {{-- <table class="table">
           <thead class="thead-dark">
             <tr>
