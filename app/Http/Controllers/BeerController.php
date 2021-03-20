@@ -82,7 +82,7 @@ class BeerController extends Controller
       // $beer = Beer::find($beer);
       // poi levo pure $beer
       return view('beers.show',compact('beer'));
-      // visto che ho book in compact
+      // visto che ho beer in compact
     }
 
     /**
