@@ -13,6 +13,7 @@ class BeerController extends Controller
     public function index()
     {
       $beers=Beer::all();
+    //   dd($beers);
       return view('beers.index',compact('beers'));
     }
 
@@ -63,7 +64,12 @@ class BeerController extends Controller
     $beer->save();
     // è meglio perche il controller non deve pensare alle proprietà
     $beerStored=Beer::orderBy('id','desc')->first();
+    // non lo faccio col compact perche in realtà gli sto passando l'id
     return redirect()->route('beers.show',$beerStored);
+    // return redirect()->route('beers.show',['beerStored'=>$beerStored->id]);
+    // dd($beerStored);
+    // return redirect()->route('beers.show',$beer);
+    // return redirect()->route('beers.show',compact('beer'));
     }
 
     /**
