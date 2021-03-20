@@ -41,7 +41,7 @@ Form
           </select>
         <div class="form-group">
       <label for="price">Price</label>
-      <input class="form-control" type="text" name="price" value="" >
+      <input class="form-control" type="number" min="0" max="9999.99" name="price" value="" step="0.01">
         </div>
         <div class="form-group">
       <label for="cover">Cover</label>
@@ -91,7 +91,7 @@ Form
                 price: {
 
         validators: {
-          numeric: {
+          regexp: {
             message: 'The price must be a number'
           },
           notEmpty: {
