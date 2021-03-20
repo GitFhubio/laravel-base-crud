@@ -17,5 +17,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 Route::resource('/beers','BeerController');
-
+Route::get('/', function () {
+       return redirect('/beers');
+});
 Route::get('/test','TestController@index');
