@@ -37,10 +37,17 @@ Homepage
                     <form method="POST" action="{{route('beers.destroy', ['beer' => $beer->id])}}">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" name="button" class="btn btn-primary">
+                    <button type="submit" name="button" class="btn btn-primary show_confirm">
                       Delete
                     </button>
                   </form></td>
             </tr>
             @endforeach
+            <script type="text/javascript">
+                $('.show_confirm').click(function(e) {
+                    if(!confirm('This action cannot be undone. Are you sure you want to delete this?')) {
+                        e.preventDefault();
+                    }
+                });
+            </script>
 @endsection
