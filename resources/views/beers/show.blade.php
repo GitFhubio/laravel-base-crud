@@ -13,7 +13,7 @@ Product
             <p class="card-text"><strong>Fermentation: </strong>{{$beer->fermentation}}</p>
             <p class="card-text"><strong>Colour: </strong> {{$beer->colour}}</p>
             <p class="card-text"><strong>Price: </strong> {{$beer->price}}</p>
-            <a href="#" class="btn btn-primary">Edit</a>
+            <a href="{{route('beers.edit',['beer'=>$beer->id])}}" class="btn btn-primary">Edit</a>
             {{-- l'edit lo faremo lunedi --}}
             </div>
         </div>

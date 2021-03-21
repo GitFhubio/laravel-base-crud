@@ -5,48 +5,48 @@ Form
 @endsection --}}
 @section('content')
   <div class="container">
-    <form id="validateForm" action="{{route('beers.store')}}" method="post">
+    <form id="validateForm" action="{{route('beers.update',['beer'=>$beer->id])}}" method="post">
       @csrf
       {{-- csrf fa un input con un token,serve per far capire a laravel
       per capire se la chiamata viene dalla sua form --}}
-      @method('POST')
+      @method('PUT')
       <div class="form-group">
       <label for="brand">Brand</label>
-      <input class="form-control" type="text" name="brand" value="">
+      <input class="form-control" type="text" name="brand" value="{{$beer->brand}}">
             </div>
       <div class="form-group">
       <label for="materials">Raw Materials</label>
-      <input class="form-control" type="text" name="materials" value="">
+      <input class="form-control" type="text" name="materials" value="{{$beer->materials}}">
           </div>
         <div class="form-group">
       <label for="fermentation">Fermentation</label>
-      <select class="form-control"  name="fermentation">
-        <option value="low">low</option>
-        <option value="high">high</option>
-        <option value="natural">natural</option>
+      <select class="form-control" name="fermentation">
+        <option value="low" {{$beer->fermentation=="low" ? 'selected=selected' : ""}}>low</option>
+        <option value="high" {{$beer->fermentation=="high" ? 'selected=selected' : ""}}>high</option>
+        <option value="natural" {{$beer->fermentation=="natural" ? 'selected=selected' : ""}}>natural</option>
       </select>
           </div>
         <div class="form-group">
       <label for="colour">Colour</label>
 <select class="form-control" name="colour">
-      <option value="pale">pale</option>
-      <option value="red">red</option>
-      <option value="dark">dark</option>
+      <option value="pale" {{$beer->colour=="pale" ? 'selected=selected' : ""}}>pale</option>
+      <option value="red" {{$beer->colour=="red" ? 'selected=selected' : ""}}>red</option>
+      <option value="dark" {{$beer->colour=="dark" ? 'selected=selected' : ""}}>dark</option>
     </select>
         <div class="form-group">
       <label for="strength">Strength</label>
       <select class="form-control" name="strength">
-            <option value="light">light</option>
-            <option value="normal">normal</option>
-            <option value="strong">strong</option>
+            <option value="light" {{$beer->strength=="light" ? 'selected=selected' : ""}}>light</option>
+            <option value="normal" {{$beer->strength=="normal" ? 'selected=selected' : ""}}>normal</option>
+            <option value="strong" {{$beer->strength=="strong" ? 'selected=selected' : ""}}>strong</option>
           </select>
         <div class="form-group">
       <label for="price">Price</label>
-      <input class="form-control" type="text" name="price" value="">
+      <input class="form-control" type="text" name="price" value="{{$beer->price}}">
         </div>
         <div class="form-group">
       <label for="cover">Cover</label>
-      <input class="form-control" type="text" name="cover" value="">
+      <input class="form-control" type="text" name="cover" value="{{$beer->cover}}">
         </div>
         <div class="d-flex justify-content-between">
           <input class="btn btn-primary" type="submit" name="" value="Invia">

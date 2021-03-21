@@ -18,6 +18,7 @@ Homepage
               <th scope="col">Strength</th>
               <th scope="col">Price</th>
               <th scope="col">Cover</th>
+              <th scope="col"></th>
             </tr>
           </thead>
           <tbody>
@@ -30,7 +31,16 @@ Homepage
                 <td  class="align-middle"><a href="{{route('beers.show',['beer'=>$beer->id])}}">{{$beer->colour}}</a></td>
                 <td  class="align-middle"><a href="{{route('beers.show',['beer'=>$beer->id])}}">{{$beer->strength}}</a></td>
                 <td  class="align-middle"><a href="{{route('beers.show',['beer'=>$beer->id])}}">{{$beer->price}}</a></td>
-                <td><a href="{{route('beers.show',['beer'=>$beer->id])}}"><img src="{{$beer->cover}}" width="150" /></a></td>
-              </tr>
+                <td class="align-middle"><a href="{{route('beers.show',['beer'=>$beer->id])}}"><img src="{{$beer->cover}}" width="150" /></a></td>
+                <td class="align-middle text-center" >
+                    <a href="{{route('beers.edit',['beer'=>$beer->id])}}" class="btn btn-primary">Edit</a>
+                    <form method="POST" action="{{route('beers.destroy', ['beer' => $beer->id])}}">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" name="button" class="btn btn-primary">
+                      Delete
+                    </button>
+                  </form></td>
+            </tr>
             @endforeach
 @endsection
