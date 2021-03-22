@@ -31,13 +31,6 @@ Product
           <a href="{{route('beers.create')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Inserisci nuova birra</a>
         </div>
     </div>
-    <script type="text/javascript">
-        $('.show_confirm').click(function(e) {
-            if(!confirm('This action cannot be undone. Are you sure you want to delete this?')) {
-                e.preventDefault();
-            }
-        });
-    </script>
         {{-- <table class="table">
           <thead class="thead-dark">
             <tr>

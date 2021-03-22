@@ -44,11 +44,4 @@ Homepage
                   </form></td>
             </tr>
             @endforeach
-            <script type="text/javascript">
-                $('.show_confirm').click(function(e) {
-                    if(!confirm('This action cannot be undone. Are you sure you want to delete this?')) {
-                        e.preventDefault();
-                    }
-                });
-            </script>
 @endsection
