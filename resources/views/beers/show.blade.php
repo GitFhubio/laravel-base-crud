@@ -13,8 +13,17 @@ Product
             <p class="card-text"><strong>Fermentation: </strong>{{$beer->fermentation}}</p>
             <p class="card-text"><strong>Colour: </strong> {{$beer->colour}}</p>
             <p class="card-text"><strong>Price: </strong> {{$beer->price}}</p>
+            <div class="card-buttons d-flex justify-content-between align-items-center">
             <a href="{{route('beers.edit',['beer'=>$beer->id])}}" class="btn btn-primary">Edit</a>
             {{-- l'edit lo faremo lunedi --}}
+            <form method="POST" action="{{route('beers.destroy', ['beer' => $beer->id])}}">
+                @csrf
+                @method('DELETE')
+                <button type="submit" name="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-danger show_confirm">
+                  Delete<i class="fas fa-trash"></i>
+                </button>
+              </form>
+            </div>
             </div>
         </div>
         <div class="buttons">
@@ -22,6 +31,13 @@ Product
           <a href="{{route('beers.create')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Inserisci nuova birra</a>
         </div>
     </div>
+    <script type="text/javascript">
+        $('.show_confirm').click(function(e) {
+            if(!confirm('This action cannot be undone. Are you sure you want to delete this?')) {
+                e.preventDefault();
+            }
+        });
+    </script>
         {{-- <table class="table">
           <thead class="thead-dark">
             <tr>
