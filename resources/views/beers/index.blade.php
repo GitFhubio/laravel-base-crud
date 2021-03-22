@@ -46,7 +46,7 @@ Homepage
                 <td class="align-middle"><a href="{{route('beers.show',['beer'=>$beer->id])}}"><img src="{{$beer->cover}}" width="150" /></a></td>
                 <td class="align-middle text-center" >
                     <a href="{{route('beers.show',compact('beer'))}}" class="btn btn-primary">Show<i class="fa fa-eye"></i></a>
-                    <a href="{{route('beers.edit',['beer'=>$beer->id])}}" class="btn btn-primary">Edit<i class="fas fa-edit"></i></a>
+                    <a href="{{route('beers.edit',['beer'=>$beer->id])}}" class="btn btn-success">Edit<i class="fas fa-edit"></i></a>
                     <!-- Button trigger modal -->
               <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal{{$beer->id}}">Delete<i class="fas fa-trash"></i>
                       </button>
