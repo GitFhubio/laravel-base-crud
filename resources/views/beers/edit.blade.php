@@ -1,15 +1,15 @@
-@extends('beers.layout.app')
+{{-- @extends('beers.layout.app')
 @section('title','Form')
 {{-- @section('title')
 Form
 @endsection --}}
-@section('content')
+{{-- @section('content')
   <div class="container">
     <form id="validateForm" action="{{route('beers.update',['beer'=>$beer->id])}}" method="post">
-      @csrf
+      @csrf --}}
       {{-- csrf fa un input con un token,serve per far capire a laravel
       per capire se la chiamata viene dalla sua form --}}
-      @method('PUT')
+      {{-- @method('PUT')
       <div class="form-group">
       <label for="brand">Brand</label>
       <input class="form-control" type="text" name="brand" value="{{$beer->brand}}">
@@ -53,10 +53,10 @@ Form
         <div class="d-flex justify-content-between">
           <input class="btn btn-primary" type="submit" name="" value="Invia">
           <a href="{{route('beers.index')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Torna alla lista birre</a>
-        </div>
+        </div> --}}
       {{-- devi specificarlo a laravel per dirgli di accettare la post --}}
       {{-- lui per creare input hidden ha bisogno di questo @method --}}
-    </form>
+    {{-- </form>
       </div>
       <script type="text/javascript">
 
@@ -117,4 +117,18 @@ Form
                 }
               });
       </script>
+@endsection --}}
+
+@extends('beers.layout.app')
+@section('title','edit')
+{{-- @section('title')
+Form
+@endsection --}}
+
+{{-- 1)method cambia tra create e edit: [post|put]
+    2)input value
+    3)url della submit : [store| update]
+     --}}
+@section('content')
+@include('beers.form',['edit'=>true])
 @endsection
