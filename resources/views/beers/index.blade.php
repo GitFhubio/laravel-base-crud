@@ -18,7 +18,7 @@ Homepage
               <th scope="col">Strength</th>
               <th scope="col">Price</th>
               <th scope="col">Cover</th>
-              <th scope="col"></th>
+              <th scope="col">Options</th>
             </tr>
           </thead>
           <tbody>
@@ -38,7 +38,7 @@ Homepage
                     <form method="POST" action="{{route('beers.destroy', ['beer' => $beer->id])}}">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" name="button" class="btn btn-danger show_confirm">
+                    <button type="submit" name="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-danger show_confirm">
                       Delete<i class="fas fa-trash"></i>
                     </button>
                   </form></td>
