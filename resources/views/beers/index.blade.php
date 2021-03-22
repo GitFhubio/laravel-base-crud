@@ -33,12 +33,13 @@ Homepage
                 <td  class="align-middle"><a href="{{route('beers.show',['beer'=>$beer->id])}}">{{$beer->price}}</a></td>
                 <td class="align-middle"><a href="{{route('beers.show',['beer'=>$beer->id])}}"><img src="{{$beer->cover}}" width="150" /></a></td>
                 <td class="align-middle text-center" >
-                    <a href="{{route('beers.edit',['beer'=>$beer->id])}}" class="btn btn-primary">Edit</a>
+                    <a href="{{route('beers.show',compact('beer'))}}" class="btn btn-primary">Show<i class="fa fa-eye"></i></a>
+                    <a href="{{route('beers.edit',['beer'=>$beer->id])}}" class="btn btn-primary">Edit<i class="fas fa-edit"></i></a>
                     <form method="POST" action="{{route('beers.destroy', ['beer' => $beer->id])}}">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" name="button" class="btn btn-primary show_confirm">
-                      Delete
+                    <button type="submit" name="button" class="btn btn-danger show_confirm">
+                      Delete<i class="fas fa-trash"></i>
                     </button>
                   </form></td>
             </tr>
