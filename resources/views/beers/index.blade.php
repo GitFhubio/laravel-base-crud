@@ -4,17 +4,17 @@ Homepage
 @endsection
 @section('nav')
 <div class="my-nav d-flex justify-content-around align-items-center">
-    <div class="left text-center"><h1 class="text-center">Lista birre</h1></div>
+    <div class="left text-center"><h1 class="text-center uppercase">Beers List</h1></div>
     <div class="center text-center">
     <nav class="navbar navbar-light bg-light">
         <form action="{{ route('beers.index') }}" class="form-inline d-flex justify-content-between" method="GET">
-          <input class="form-control" type="search" placeholder="Search" name="search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+          <input class="form-control" type="search" placeholder="Search by brand, colour or raw materials" name="search" aria-label="Search">
+          <button class="btn btn-outline-dark" type="submit">Search</button>
         </form>
       </nav>
     </div>
     <div class="right text-center">
-    <a style="height:80%;" href="{{route('beers.create')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Create a new beer</a>
+    <a href="{{route('beers.create')}}" class="btn btn-dark btn-lg active" role="button" aria-pressed="true">Create a new beer</a>
 </div>
 </div>
 @endsection

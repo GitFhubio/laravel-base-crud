@@ -23,8 +23,8 @@ class BeerController extends Controller
     else{
         $beers = Beer::where("brand", "like", '%'.$data["search"].'%')
         ->orWhere("colour", "like", '%'.$data["search"].'%' )
-        ->orWhere("fermentation", "like", '%'.$data["search"].'%')
-        ->orWhere("strength", "like", '%'.$data["search"].'%' )
+        // ->orWhere("fermentation", "like", '%'.$data["search"].'%')
+        // ->orWhere("strength", "like", '%'.$data["search"].'%' )
         ->orWhere("materials", "like", '%'.$data["search"].'%')
         ->get();
     }

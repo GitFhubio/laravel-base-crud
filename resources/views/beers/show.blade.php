@@ -14,7 +14,7 @@ Product
             <p class="card-text"><strong>Colour: </strong> {{$beer->colour}}</p>
             <p class="card-text"><strong>Price: </strong> {{$beer->price}}</p>
             <div class="card-buttons d-flex justify-content-between align-items-center">
-            <a href="{{route('beers.edit',['beer'=>$beer->id])}}" class="btn btn-primary">Edit</a>
+            <a href="{{route('beers.edit',['beer'=>$beer->id])}}" class="btn btn-success">Edit</a>
             {{-- l'edit lo faremo lunedi --}}
             {{-- <form method="POST" action="{{route('beers.destroy', ['beer' => $beer->id])}}">
                 @csrf
