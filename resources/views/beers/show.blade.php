@@ -16,13 +16,16 @@ Product
             <div class="card-buttons d-flex justify-content-between align-items-center">
             <a href="{{route('beers.edit',['beer'=>$beer->id])}}" class="btn btn-primary">Edit</a>
             {{-- l'edit lo faremo lunedi --}}
-            <form method="POST" action="{{route('beers.destroy', ['beer' => $beer->id])}}">
+            {{-- <form method="POST" action="{{route('beers.destroy', ['beer' => $beer->id])}}">
                 @csrf
                 @method('DELETE')
                 <button type="submit" name="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-danger show_confirm">
                   Delete<i class="fas fa-trash"></i>
                 </button>
-              </form>
+              </form> --}}
+              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal{{$beer->id}}">Delete<i class="fas fa-trash"></i>
+              </button>
+              @include('beers.layout.modal')
             </div>
             </div>
         </div>
