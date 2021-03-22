@@ -17,7 +17,7 @@
     </head>
     <body>
   <div class="wrapper">
-      <div class="header" style="background-image:url()">
+      <div class="header" style="background-image:url({{asset('img/back.jpg')}})">
           <div class="logo d-flex justify-content-center">  <a href="{{route('beers.index')}}"><img src="{{asset('img/logo2.png')}}" alt=""></a></div>
           @yield('nav')
     </div>

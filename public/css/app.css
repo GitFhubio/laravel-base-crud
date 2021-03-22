@@ -10040,12 +10040,21 @@ i {
   padding-left: 0.5vw;
 }
 
-.my-nav {
+.header {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.header .logo {
+  padding-top: 20px;
+}
+.header .my-nav {
   margin: 0 1vw;
 }
-
-.logo {
-  margin-top: 20px;
+.header .my-nav div {
+  width: calc(100% / 3);
+}
+.header .my-nav form {
+  width: 100%;
 }
 
 .container {

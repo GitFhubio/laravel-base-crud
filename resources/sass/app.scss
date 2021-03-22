@@ -35,12 +35,23 @@ i{
 padding-left:0.5vw;
 }
 
-.my-nav{
-    margin:0 1vw;
+.header{
+    background-size: cover;
+    background-repeat: no-repeat;
+    .logo{
+        padding-top:20px;
+    }
+    .my-nav{
+        margin:0 1vw;
+        div{
+            width:calc(100% / 3);
+    }
+    form{
+        width:100%;
+    }
+        }
 }
-.logo{
-    margin-top:20px;
-}
+
 .container{
     margin-top:10px;
     margin-bottom:20px;
