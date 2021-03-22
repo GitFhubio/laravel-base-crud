@@ -10,10 +10,25 @@ class BeerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-      $beers=Beer::all();
+        // di base non ha parametri in ingresso
+    //   $beers=Beer::all();
     //   dd($beers);
+    $data = $request->all();
+
+    if(empty($data["search"])){
+        $beers = Beer::all();
+    }
+    else{
+        $beers = Beer::where("brand", "like", '%'.$data["search"].'%')
+        ->orWhere("colour", "like", '%'.$data["search"].'%' )
+        ->orWhere("fermentation", "like", '%'.$data["search"].'%')
+        ->orWhere("strength", "like", '%'.$data["search"].'%' )
+        ->orWhere("materials", "like", '%'.$data["search"].'%')
+        ->get();
+    }
+
       return view('beers.index',compact('beers'));
     }
 

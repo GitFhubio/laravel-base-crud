@@ -17,6 +17,11 @@
     </head>
     <body>
   <div class="wrapper">
+      <div class="header">
+          <div class="logo d-flex justify-content-center">  <img src="{{asset('img/logo2.png')}}" alt=""></div>
+          @yield('nav')
+    </div>
+
     {{-- <div class="error-section">
       @if ($errors->any())
 <div class="alert alert-danger">

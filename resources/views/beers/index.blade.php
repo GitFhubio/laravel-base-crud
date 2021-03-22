@@ -2,11 +2,19 @@
 @section('title')
 Homepage
 @endsection
-@section('content')
-  <div class="header d-flex justify-content-between align-items-center">
+@section('nav')
+<div class="my-nav d-flex justify-content-between align-items-center">
     <h1 class="text-center">Lista birre</h1>
+    <nav class="navbar navbar-light bg-light">
+        <form action="{{ route('beers.index') }}" class="form-inline" method="GET">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" name="search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </nav>
     <a style="height:80%;" href="{{route('beers.create')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Create a new beer</a>
   </div>
+@endsection
+@section('content')
         <table class="table">
           <thead class="thead-dark">
             <tr>
