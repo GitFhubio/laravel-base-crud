@@ -33,6 +33,7 @@ Form
       <option value="red" {{$beer->colour=="red" ? 'selected=selected' : ""}}>red</option>
       <option value="dark" {{$beer->colour=="dark" ? 'selected=selected' : ""}}>dark</option>
     </select>
+  </div>
         <div class="form-group">
       <label for="strength">Strength</label>
       <select class="form-control" name="strength">
@@ -40,6 +41,7 @@ Form
             <option value="normal" {{$beer->strength=="normal" ? 'selected=selected' : ""}}>normal</option>
             <option value="strong" {{$beer->strength=="strong" ? 'selected=selected' : ""}}>strong</option>
           </select>
+        </div>
         <div class="form-group">
       <label for="price">Price</label>
       <input class="form-control" type="text" name="price" value="{{$beer->price}}">

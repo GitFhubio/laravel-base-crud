@@ -33,6 +33,7 @@ Form
       <option value="red">red</option>
       <option value="dark">dark</option>
     </select>
+  </div>
         <div class="form-group">
       <label for="strength">Strength</label>
       <select class="form-control" name="strength">
@@ -40,6 +41,7 @@ Form
             <option value="normal">normal</option>
             <option value="strong">strong</option>
           </select>
+        </div>
         <div class="form-group">
       <label for="price">Price</label>
       <input class="form-control" type="text" name="price" value="">
