@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Il chiostro - @yield('title')</title>
+        <title>Fatti una birra - @yield('title')</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -17,8 +17,8 @@
     </head>
     <body>
   <div class="wrapper">
-      <div class="header">
-          <div class="logo d-flex justify-content-center">  <img src="{{asset('img/logo2.png')}}" alt=""></div>
+      <div class="header" style="background-image:url()">
+          <div class="logo d-flex justify-content-center">  <a href="{{route('beers.index')}}"><img src="{{asset('img/logo2.png')}}" alt=""></a></div>
           @yield('nav')
     </div>
 
