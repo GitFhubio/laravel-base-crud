@@ -2,13 +2,13 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete this beer?</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete the {{$beer->brand}} beer?</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-         If you continue,this beer will be deleted. This action cannot be undone.
+         If you continue,the beer {{$beer->id}} will be deleted. This action cannot be undone.
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
