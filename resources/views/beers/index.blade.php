@@ -36,6 +36,7 @@ Homepage
           <tbody>
             @foreach ($beers as $beer)
               <tr>
+                  {{-- qui volendo grazie a carbon ho {{$beer->created_at}} nel formato che voglio visualizzato io(nel database resta uguale) --}}
                 <th  class="align-middle" scope="row"><a href="{{route('beers.show',['beer'=>$beer])}}">{{$beer->id}}</a></th>
                 <td  class="align-middle"><a href="{{route('beers.show',compact('beer'))}}">{{$beer->brand}}</a></td>
                 <td  class="align-middle"><a href="{{route('beers.show',$beer)}}">{{$beer->materials}}</a></td>

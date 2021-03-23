@@ -8,7 +8,7 @@
           </button>
         </div>
         <div class="modal-body">
-         If you continue,the beer {{$beer->id}} will be deleted. This action cannot be undone.
+         If you continue,the beer #{{$beer->id}} will be deleted. This action cannot be undone.
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
